@@ -38,7 +38,7 @@ def ports():
     print("Enter the IP or URL example:")
     print("{}IP >>> 96.124.xxx.xxx > www.google.com > https://www.google.com{}".format(YELLOW, RESET))
     nmap = input(">>> ")
-    nmapSC = subprocess.Popen('sudo nmap -Pn -A -v ' + str(nmap), stdout=subprocess.PIPE, shell=True)
+    nmapSC = subprocess.Popen('sudo nmap --script "vuln" -Pn --open -A ' + str(nmap), stdout=subprocess.PIPE, shell=True)
     print("This may take several minutes")
     time.sleep(5)
     os.system('clear')
